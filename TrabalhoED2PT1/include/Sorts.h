@@ -14,6 +14,8 @@ class Sorts
         void heapSort(int *, int, int);
         void heapify(); // FAZER!
         void mergeSort(int vet[], int inicio, int fim);
+        void medianaDeTres(int vet[], int inicio, int fim);
+        void medianaDeCinco(int vet[], int inicio, int fim);
 
     private:
         void merging(int *,int,int,int);
