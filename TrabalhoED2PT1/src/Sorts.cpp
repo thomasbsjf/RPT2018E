@@ -103,7 +103,7 @@ void Sort::heapSort(int v[], int tam, int raiz)
     v[raiz] = valor;
 }
 
-void Sort::heapify()
+void Sort::heapify() // FAZER!
 {
     
 }
@@ -203,6 +203,10 @@ double Sort::medianaDeTres(int vet[],int inicio, int fim)
     }
     std::swap(meio,fim);
     return vet[fim];
+}
+
+double Sort::medianaDeCinco(int vet[], int inicio, int fim){ // FAZER
+    
 }
 
 void Sort::quickSortMediana(int vet[], int inicio, int fim)
