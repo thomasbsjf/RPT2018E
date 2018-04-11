@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt1\main.cpp
+	<iostream>
+
+1523469398 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt1\src\sorts.cpp
+	"Sorts.h"
+	<algorithm>
+
+1523469392 c:\users\thoma\desktop\ed2018\trabalhoed2pt1\include\sorts.h
+	<algorithm>
+
+1523473619 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt1\teste.cpp
+
+1523473954 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt1\src\endaberto.cpp
+	"EndAberto.h"
+	<ostream>
+	<iostream>
+
+1523473527 c:\users\thoma\desktop\ed2018\trabalhoed2pt1\include\endaberto.h
+
