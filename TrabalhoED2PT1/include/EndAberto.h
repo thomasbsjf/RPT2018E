@@ -17,12 +17,16 @@ class EndAberto
         int inserirQuadratico(int n);
         int inserirDuplo(int n);
         int pesquisar(int n);
+    
         int getTamanhoHash();
         void setTamanhoHash(int tam);
+        int getContadorColisao();
+        void setContadorColisao(int n);
 
     private:
         int tamHash;
         int *v;
+        int contadorColisao;
 };
 
-#endif // ENDSONDAGEMLINEAR_H
+#endif // ENDABERTO_H
