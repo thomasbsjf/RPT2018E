@@ -5,6 +5,7 @@ using namespace std;
 EndAberto::EndAberto()
 {
     tamHash = 0;
+    setContadorColisao(0);
 }
 
 EndAberto::~EndAberto()
@@ -43,12 +44,13 @@ int EndAberto::inserirLinear(int n)
     int pos = funcaoHashDivisao(n);
     if(v[pos] != -1)
     {
-        for(int i = 0 ; i < getTamanhoHash(); i++)
+        for(int i = 1 ; i < getTamanhoHash(); i++)
         {
             int newPos = SondagemLinear(pos,i);
             if(v[newPos] == -1)
             {
                 v[newPos] = n;
+                setContadorColisao(i);
                 return 1;
             }
         }
@@ -64,12 +66,13 @@ int EndAberto::inserirQuadratico(int n)
 
     if(v[pos] != -1)
     {
-        for(int i=0; i < getTamanhoHash(); i++)
+        for(int i=1; i < getTamanhoHash(); i++)
         {
             int newPos = SondagemQuadratica(pos, i);
             if(v[newPos] == -1)
             {
                 v[newPos] = n;
+                setContadorColisao(i);
                 return 1;
             }
         }
@@ -84,7 +87,7 @@ int EndAberto::inserirDuplo(int n)
     int pos = funcaoHashDivisao(n);
     if(v[pos] != -1)
     {
-        for(int i=0; i< getTamanhoHash(); i++)
+        for(int i=1; i< getTamanhoHash(); i++)
         {
 
 
@@ -92,6 +95,7 @@ int EndAberto::inserirDuplo(int n)
             if(newpos != pos)
             {
                 v[newpos] = n;
+                setContadorColisao(i);
             }
         }
     }
