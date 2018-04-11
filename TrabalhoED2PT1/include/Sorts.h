@@ -12,9 +12,8 @@ class Sorts
         void quickSortInsertion(int *, int, int);
         void insertionSort(int *, int n);
         void heapSort(int *, int, int);
+        void heapify(); // FAZER!
         void mergeSort(int vet[], int inicio, int fim);
-
-    protected:
 
     private:
         void merging(int *,int,int,int);
