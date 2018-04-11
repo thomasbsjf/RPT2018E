@@ -13,6 +13,14 @@ EndAberto::~EndAberto()
 
 }
 
+int EndAberto::getContadorColisao(){
+    return contadorColisao;
+}
+
+void EndAberto::setContadorColisao(int n){
+    contadorColisao = n;
+}
+
 int EndAberto::getTamanhoHash()
 {
     return tamHash;
