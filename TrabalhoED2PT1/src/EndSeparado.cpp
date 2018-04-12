@@ -1,11 +1,11 @@
 #include "EndSeparado.h"
-#include <list>
+#include <vector>
 #include <iostream>
 using namespace std;
 EndSeparado::EndSeparado(int b)
 {
     this->tamHash = b;
-    listaHash = new list<int>[tamHash];
+    listaHash = new vector<int>[tamHash];
 }
 
 EndSeparado::~EndSeparado()
@@ -24,9 +24,10 @@ void EndSeparado::mostraHash()
     for (int i = 0; i < tamHash; i++)
     {
         cout << i;
-        for (list<int>::iterator i = listaHash->begin(); i!= listaHash->end(); ++i)
+        for(auto x : listaHash[i])
         {
-            cout << " --> " + *i << endl;
+            cout << " --> " << x;
         }
+        cout << endl;
     }
 }

@@ -1,6 +1,6 @@
 #ifndef ENDSEPARADO_H
 #define ENDSEPARADO_H
-#include <list>
+#include <vector>
 using namespace std;
 class EndSeparado
 {
@@ -12,7 +12,7 @@ public:
     void mostraHash();
 
 private:
-    list<int> *listaHash;
+    vector<int> *listaHash;
     int tamHash;
 };
 

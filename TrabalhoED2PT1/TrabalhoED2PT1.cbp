@@ -35,9 +35,13 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/EndAberto.h" />
+		<Unit filename="include/EndCoalescido.h" />
+		<Unit filename="include/EndSeparado.h" />
 		<Unit filename="include/Sorts.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/EndAberto.cpp" />
+		<Unit filename="src/EndCoalescido.cpp" />
+		<Unit filename="src/EndSeparado.cpp" />
 		<Unit filename="src/Sorts.cpp" />
 		<Extensions>
 			<code_completion />

@@ -11,7 +11,7 @@ Sorts::~Sorts()
 
 }
 
-void Sort::merging(int vet[], int inicio, int meio, int fim)
+void Sorts::merging(int vet[], int inicio, int meio, int fim)
 {
     int i, j, k, *aux;
     i = inicio;
@@ -55,7 +55,7 @@ void Sort::merging(int vet[], int inicio, int meio, int fim)
     }
 }
 
-void Sort::mergeSort(int vet[], int inicio, int fim)
+void Sorts::mergeSort(int vet[], int inicio, int fim)
 {
     if(inicio < fim)
     {
@@ -66,7 +66,7 @@ void Sort::mergeSort(int vet[], int inicio, int fim)
     }
 }
 
-void Sort::insertionSort(int vet[], int tam)
+void Sorts::insertionSort(int vet[], int tam)
 {
     for(int i = 1; i<= tam; i++)
     {
@@ -81,7 +81,7 @@ void Sort::insertionSort(int vet[], int tam)
     }
 }
 
-void Sort::heapSort(int v[], int tam, int raiz)
+void Sorts::heapSort(int v[], int tam, int raiz)
 {
     int ram, valor; // ram = ramificação
     valor = v[raiz];
@@ -103,12 +103,12 @@ void Sort::heapSort(int v[], int tam, int raiz)
     v[raiz] = valor;
 }
 
-void Sort::heapify() // FAZER!
+void Sorts::heapify() // FAZER!
 {
-    
+
 }
 
-int Sort::quickSepara(int vet[], int inicio, int fim)
+int Sorts::quickSepara(int vet[], int inicio, int fim)
 {
     int esq, dir, aux, pivo;
     esq = inicio;
@@ -136,7 +136,7 @@ int Sort::quickSepara(int vet[], int inicio, int fim)
     return dir;
 }
 
-int Sort::quickSepara(int vet[], int inicio, int fim, int mediana)
+int Sorts::quickSeparaMediana(int vet[], int inicio, int fim, int mediana)
 {
     int esq, dir, aux, pivo;
     esq = inicio;
@@ -164,7 +164,7 @@ int Sort::quickSepara(int vet[], int inicio, int fim, int mediana)
     return dir;
 }
 
-void Sort::quickSort(int vet[],int inicio, int fim)
+void Sorts::quickSort(int vet[],int inicio, int fim)
 {
     if(inicio < fim)
     {
@@ -174,7 +174,7 @@ void Sort::quickSort(int vet[],int inicio, int fim)
     }
 }
 
-void Sort::quickSortInsertion(int vet[], int inicio, int fim)
+void Sorts::quickSortInsertion(int vet[], int inicio, int fim)
 {
     int tamanho = fim-inicio;
     if(tamanho<10)
@@ -185,7 +185,7 @@ void Sort::quickSortInsertion(int vet[], int inicio, int fim)
     }
 }
 
-double Sort::medianaDeTres(int vet[],int inicio, int fim)
+double Sorts::medianaDeTres(int vet[],int inicio, int fim)
 {
     int meio = (inicio+fim)/2;
 
@@ -205,16 +205,17 @@ double Sort::medianaDeTres(int vet[],int inicio, int fim)
     return vet[fim];
 }
 
-double Sort::medianaDeCinco(int vet[], int inicio, int fim){ // FAZER
-    
+double Sorts::medianaDeCinco(int vet[], int inicio, int fim){ // FAZER
+
+    return 0;
 }
 
-void Sort::quickSortMediana(int vet[], int inicio, int fim)
+void Sorts::quickSortMediana(int vet[], int inicio, int fim)
 {
     if(inicio <fim)
     {
         int mediana = medianaDeTres(vet, inicio, fim);
-        int indicePivo = quickSepara(vet, inicio, fim, mediana);
+        int indicePivo = quickSeparaMediana(vet, inicio, fim, mediana);
         quickSort(vet,inicio,indicePivo-1);
         quickSort(vet,indicePivo+1,fim);
     }
