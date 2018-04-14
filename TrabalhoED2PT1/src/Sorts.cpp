@@ -1,9 +1,10 @@
 #include "Sorts.h"
 #include <algorithm>
-
+#include <iostream>
 Sorts::Sorts()
 {
-
+    numRegistros = 0;
+    contadorCompara = 0;
 }
 
 Sorts::~Sorts()
@@ -17,7 +18,7 @@ void Sorts::merging(int vet[], int inicio, int meio, int fim)
     i = inicio;
     j = fim;
     k = 0;
-    aux = new int[(inicio+fim)+1];
+    aux = new int[fim-inicio];
 
     while(i <= meio && j <= fim)
     {
@@ -39,19 +40,14 @@ void Sorts::merging(int vet[], int inicio, int meio, int fim)
         i++;
         k++;
     }
-    while(j>= fim)
+    while(j<= fim)
     {
         aux[k]= vet[j];
         j++;
         k++;
     }
-    k = 0;
-    i = inicio;
-    while(i<= fim)
-    {
-        vet[i] = aux[k];
-        i++;
-        k++;
+    for(int p = inicio; p<= fim; p++){
+        vet[p] = aux[p];
     }
 }
 
@@ -68,39 +64,51 @@ void Sorts::mergeSort(int vet[], int inicio, int fim)
 
 void Sorts::insertionSort(int vet[], int tam)
 {
+    zeraContadorCompara();
+    zeraNumRegistros();
     for(int i = 1; i<= tam; i++)
     {
         int pivo = vet[i];
+        addNumRegistros();
         int j = i - 1;
+        addNumRegistros();
         while(j>=0 && vet[j] > pivo)
         {
-            vet[j+1] = vet[j];
-            j--;
+            addContadorCompara();
+            if(vet[j] > pivo)
+            {
+                addContadorCompara();
+                vet[j+1] = vet[j];
+                addNumRegistros();
+                j--;
+            }
         }
         vet[j+1] = pivo;
+        addNumRegistros();
     }
+    imprimeValores();
 }
 
-void Sorts::heapSort(int v[], int tam, int raiz)
+void Sorts::heapSort(int vet[], int tam, int raiz)
 {
     int ram, valor; // ram = ramificação
-    valor = v[raiz];
+    valor = vet[raiz];
 
     while(raiz < (tam/2))
     {
         ram = 2*raiz + 1;
-        if(ram < tam -1 && v[ram] < v[ram +1])
+        if(ram < tam -1 && vet[ram] < vet[ram +1])
         {
             ram++;
         }
-        if(valor >= v[ram])
+        if(valor >= vet[ram])
         {
             break;
         }
-        v[raiz] = v[ram];
+        vet[raiz] = vet[ram];
         raiz = ram;
     }
-    v[raiz] = valor;
+    vet[raiz] = valor;
 }
 
 void Sorts::heapify() // FAZER!
@@ -112,27 +120,41 @@ int Sorts::quickSepara(int vet[], int inicio, int fim)
 {
     int esq, dir, aux, pivo;
     esq = inicio;
+    addNumRegistros();
     dir = fim;
+    addNumRegistros();
     pivo = vet[inicio];
+    addNumRegistros();
     while(esq<dir)
     {
+        addContadorCompara();
         while(vet[esq]<= pivo)
         {
+            addContadorCompara();
             esq++;
+            addNumRegistros();
         }
         while(vet[dir]> pivo)
         {
+            addContadorCompara();
             dir--;
+            addNumRegistros();
         }
         if(esq<dir)
         {
+            addContadorCompara();
             aux = vet[esq];
+            addNumRegistros();
             vet[esq] = vet[dir];
+            addNumRegistros();
             vet[dir] = aux;
+            addNumRegistros();
         }
     }
     vet[inicio] = vet[dir];
+    addNumRegistros();
     vet[dir] = pivo;
+    addNumRegistros();
     return dir;
 }
 
@@ -172,41 +194,40 @@ void Sorts::quickSort(int vet[],int inicio, int fim)
         quickSort(vet,inicio,indicePivo-1);
         quickSort(vet,indicePivo+1,fim);
     }
+
 }
 
 void Sorts::quickSortInsertion(int vet[], int inicio, int fim)
 {
     int tamanho = fim-inicio;
-    if(tamanho<10)
-    {
-        insertionSort(vet, tamanho);
-    }else{
-        quickSort(vet, inicio, fim);
-    }
+    insertionSort(vet, tamanho);
+    imprimeValores();
 }
 
 double Sorts::medianaDeTres(int vet[],int inicio, int fim)
 {
-    int meio = (inicio+fim)/2;
 
-    if(vet[inicio] > vet[meio])
+    int a = inicio + rand() % (fim-inicio);
+    int b = inicio + rand() % (fim-inicio);
+    int c = inicio + rand() % (fim-inicio);
+    if(vet[a] > vet[b])
     {
-        std::swap(inicio,meio);
+        std::swap(a,b);
     }
-    if(vet[inicio] > vet[fim])
+    if(vet[a] > vet[c])
     {
-        std::swap(inicio,fim);
+        std::swap(a,c);
     }
-    if(vet[meio]> vet[fim])
+    if(vet[b]> vet[c])
     {
-        std::swap(meio,fim);
+        std::swap(b,c);
     }
-    std::swap(meio,fim);
-    return vet[fim];
+    std::swap(b,c);
+    return vet[c];
 }
 
-double Sorts::medianaDeCinco(int vet[], int inicio, int fim){ // FAZER
-
+double Sorts::medianaDeCinco(int vet[], int inicio, int fim)  // FAZER
+{
     return 0;
 }
 
@@ -221,3 +242,8 @@ void Sorts::quickSortMediana(int vet[], int inicio, int fim)
     }
 }
 
+void Sorts::imprimeValores()
+{
+    std::cout << "Numero de comparacoes: " << contadorCompara << std::endl;
+    std::cout << "Copias de Registros: " << numRegistros << std::endl;
+}

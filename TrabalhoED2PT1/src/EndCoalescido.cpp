@@ -11,9 +11,10 @@ EndCoalescido::~EndCoalescido()
     //dtor
 }
 
-EndCoalescido::insere(int chave){
+void EndCoalescido::insere(int chave)
+{
 
-    if(chave == NULL){
+    //if(chave == NULL){
 
-    }
 }
+

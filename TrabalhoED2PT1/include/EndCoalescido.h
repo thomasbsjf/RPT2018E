@@ -14,6 +14,7 @@ class EndCoalescido
     public:
         EndCoalescido();
         virtual ~EndCoalescido();
+        void insere(int chave);
 
     private:
 };
