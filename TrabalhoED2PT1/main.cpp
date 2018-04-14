@@ -7,24 +7,23 @@
 #include <fstream>
 
 using namespace std;
-
 int main()
 {
-
-
-
-    cout << "Testes!" << endl;
-
-    int c[] = {28, 11, 21, 8, 12};
-    int b1[] = {28, 11, 27, 8, 12, 9, 7, 6, 5, 4, 28, 11, 27, 8, 12, 9, 7, 6, 5, 4, 28, 11, 27, 8, 12, 9, 7, 6, 5, 4};
-    cout << "Testes!1" << endl;
-    Sorts *a = new Sorts();
-    a->quickSortMediana(c,0,5);
-    for(int i = 0; i< 5; i++){
-        cout << c[i]<< " ";
+    int n, i=0;
+    int vet[6];
+    string linha;
+    ifstream parametros ("parametros.txt");
+    if (parametros.is_open())
+    {
+        while (parametros >> n )
+        {
+            vet[i] = n;
+            i++;
+        }
+        parametros.close();
     }
-    cout << endl;
-    cout << "Testes!2" << endl;
-    cout << "Testes3!" << endl;
 
+    else
+        cout << "Nao foi possivel abrir o arquivo.";
+    return 0;
 }
