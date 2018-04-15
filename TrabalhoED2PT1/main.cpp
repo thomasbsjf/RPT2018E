@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
-//#include <EndAberto.h>
-//#include <EndSeparado.h>
-//#include <Sorts.h>
+#include <EndAberto.h>
+#include <EndSeparado.h>
+#include <Sorts.h>
 #include <time.h>
 #include <stdlib.h>
 #include "ListaQuestions.h"
@@ -31,7 +31,7 @@ void criaVetorQuestions()
             if(c== '*') // CHECA A EXISTENCIA DA VIRGULA
             {
                 getline(questions,id);
-                a.setid(id);
+                a.setId(id);
             }
             if(c=='-')
             {
@@ -43,18 +43,18 @@ void criaVetorQuestions()
             {
 
                 getline(questions,data);
-                a.setdata(data);
+                a.setData(data);
             }
             if(c=='%')
             {
                 getline(questions,score);
-                a.setscore(score);
+                a.setScore(score);
 
             }
             if(c=='#')
             {
                 getline(questions,title);
-                a.settitle(title);
+                a.setTitle(title);
             }
             if(title!="null")
             {
@@ -112,14 +112,11 @@ int main()
 
 /**<  srand(time(NULL))
 {
-
     for(int =0;i<N;i++)
     {
-
         int g=rand()%N
      v[g]=0
     }
 }
 }
-
 */
