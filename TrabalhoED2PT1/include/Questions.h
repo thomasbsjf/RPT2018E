@@ -6,88 +6,49 @@ using namespace std;
 
 class Questions
 {
-    public:
-        Questions(); //CONSTRUTOR PARA INICIAR QUANTIDADE =0;
-    Questions(string id1, string user1,string data1,string score1,string title1)
-    {
-        id=id1;
-        user=user1;
-        data=data1;
-        score=score1;
-        title=title1;
-    }
+public:
+    Questions(); //CONSTRUTOR PARA INICIAR QUANTIDADE =0;
+    Questions(string id1, string user1,string data1,string score1,string title1);
     virtual ~Questions();
-    string getid(){return id;}
-    string getdata(){return data;}
-    void setdata(string data1){data=data1;}
-    string getscore(){return score;}
-    void setscore(string score1){score=score1;}
-    string gettitle(){return title;}
-    void settitle(string title1){title=title1;}
-    void setUser(string user1)
-    {
-        user=user1;
-    }
-    void imprime()
-    {
-        cout<< id<<endl;
-        cout<< user<<endl;
-        cout<<title<<endl;
-    }
 
-   int getUser() // RETORNA QNT PRIVADO;
-   {
-       return qtd;
-   }
+    string getId(){return id;}
+    void setId(string t){id=t;}
 
-   Questions* getProx()
-    {
-        return prox;
-    }
-    Questions* getAnt()
-    {
-        return ant;
-    }
-   void setProx(Questions *p)
-   {
-       prox=p;
-   }
-   void adiciona()
-   {
-       qtd++;
-   }
-   void setid(string t)
-   {
-       id=t;
-   }
-   void setAnt(Questions* p)
-   {
-       ant=p;
-   }
-   void comparar(string s)
-   {
-       if(id==s)
-       {
-           adiciona();
-       }
-   }
-   int getqtd()
-   {
-       return qtd;
-   }
+    string getData(){return data;}
+    void setData(string data1){data=data1;}
 
+    string getScore(){return score;}
+    void setScore(string score1){score=score1;}
 
-    protected:
+    string getTitle(){return title;}
+    void setTitle(string title1){title=title1;}
 
-    private:
-        string id;
-        string user;
-        string data;
-        string score;
-        string title;
-        int qtd;
-        Questions *prox;
-        Questions *ant;
+    int getUser(){return qtd;} // RETORNA QNT PRIVADO;
+    void setUser(string user1){user=user1;}
+
+    Questions* getProx(){return prox;}
+    void setProx(Questions *p){prox=p;}
+
+    Questions* getAnt(){return ant;}
+    void setAnt(Questions* p){ant=p;}
+
+    void setQtd(){qtd++;}
+    int getQtd(){return qtd;}
+
+    void compara(string s);
+    void imprime();
+
+protected:
+
+private:
+    string id;
+    string user;
+    string data;
+    string score;
+    string title;
+    int qtd;
+    Questions *prox;
+    Questions *ant;
 };
 
 #endif // QUESTIONS_H

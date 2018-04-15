@@ -11,8 +11,8 @@ class Sorts
         void quickSortMediana(int vet[], int, int);
         void quickSortInsertion(int vet[], int, int);
         void insertionSort(int vet[], int n);
-        void heapSort(int vet[], int, int);
-        void heapify(); // FAZER!
+        void constroiHeap(int vet[], int, int);
+        void heapSort(int vet[], int tam);
         //void mergeSort(std::vector<int> vet, int inicio, int fim);
         void mergeSort(int vet[], int inicio, int fim);
         double medianaDeTres(int vet[], int inicio, int fim);
