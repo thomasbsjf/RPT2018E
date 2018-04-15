@@ -1,6 +1,7 @@
 #include "Sorts.h"
 #include <algorithm>
 #include <iostream>
+#include <time.h>
 Sorts::Sorts()
 {
     numRegistros = 0;
@@ -201,7 +202,7 @@ void Sorts::quickSort(int vet[],int inicio, int fim)
     if(inicio < fim)
     {
         int indicePivo = quickSepara(vet,inicio,fim);
-        quickSort(vet,inicio,indicePivo-1);
+        quickSort(vet,inicio,indicePivo);
         quickSort(vet,indicePivo+1,fim);
     }
 
@@ -216,24 +217,22 @@ void Sorts::quickSortInsertion(int vet[], int inicio, int fim)
 
 double Sorts::medianaDeTres(int vet[],int inicio, int fim)
 {
+    int meio = (fim-inicio)-1/2;
 
-    int a = inicio + rand() % (fim-inicio);
-    int b = inicio + rand() % (fim-inicio);
-    int c = inicio + rand() % (fim-inicio);
-    if(vet[a] > vet[b])
+    if(vet[inicio] > vet[meio])
     {
-        std::swap(a,b);
+        std::swap(inicio,meio);
     }
-    if(vet[a] > vet[c])
+    if(vet[inicio] > vet[fim])
     {
-        std::swap(a,c);
+        std::swap(inicio,fim);
     }
-    if(vet[b]> vet[c])
+    if(vet[meio]> vet[fim])
     {
-        std::swap(b,c);
+        std::swap(meio,fim);
     }
-    std::swap(b,c);
-    return vet[c];
+    std::swap(meio,fim);
+    return fim;
 }
 
 double Sorts::medianaDeCinco(int vet[], int inicio, int fim)  // FAZER
@@ -241,14 +240,55 @@ double Sorts::medianaDeCinco(int vet[], int inicio, int fim)  // FAZER
     return 0;
 }
 
-void Sorts::quickSortMediana(int vet[], int inicio, int fim)
+void Sorts::quickSortMedianaTres(int vet[], int inicio, int fim)
 {
-    if(inicio <fim)
+    if((fim - inicio) <= 3)
+    {
+        manualSortQuick(vet,inicio,fim);
+    }
+    else
     {
         int mediana = medianaDeTres(vet, inicio, fim);
         int indicePivo = quickSeparaMediana(vet, inicio, fim, mediana);
         quickSort(vet,inicio,indicePivo-1);
         quickSort(vet,indicePivo+1,fim);
+    }
+}
+
+int Sorts::numeroAleatorio(int menor, int maior)
+{
+    return rand()%(maior-menor+1) + menor;
+}
+
+void Sorts::manualSortQuick(int vet[], int inicio, int fim)
+{
+    int tam = (fim-inicio);
+
+    if(tam == 2)
+    {
+        if(vet[inicio] > vet[fim])
+            std::swap(inicio,fim);
+    }
+    else if(tam > 2)
+    {
+        int meio = fim-1;
+        if(vet[inicio] > vet[meio])
+            std::swap(inicio,meio);
+        if(vet[inicio]> vet[fim])
+            std::swap(inicio,fim);
+        if(vet[meio]> vet[fim])
+            std::swap(meio,fim);
+    }
+}
+
+void Sorts::quickSortMedianaCinco(int vet[], int inicio, int fim)
+{
+    if(inicio <fim)
+    {
+        int mediana = medianaDeCinco(vet, inicio, fim);
+        int indicePivo = quickSeparaMediana(vet, inicio, fim, mediana);
+        quickSort(vet,inicio,indicePivo);
+        quickSort(vet,indicePivo,fim);
     }
 }
 
