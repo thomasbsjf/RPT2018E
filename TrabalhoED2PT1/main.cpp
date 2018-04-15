@@ -84,6 +84,28 @@ void criaVetorQuestions()
     questions.close();
 }
 
+void checaDesempenho()
+{
+    clock_t inic, fin;
+    inic = clock();
+    compute();
+    fin = clock();
+    //cout << "Tempo de execucao: " << (fin - inic) / CLOCKS_PER_SEC;
+    std::ofstream saida;
+    saida.open("saida.txt", std::ios::app);
+    if(saida.is_open())
+    {
+        saida << "Tempo de execucao: " << (fin - inic) / CLOCKS_PER_SEC << "\n\n";
+        saida << "--------------------//-------------------- \n\n";
+    }
+    else
+    {
+        cout << "Erro ao abrir arquivo saida.txt";
+    }
+    saida.close();
+}
+
+
 int main()
 {
     int vet[7];
