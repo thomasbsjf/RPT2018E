@@ -46,7 +46,8 @@ void Sorts::merging(int vet[], int inicio, int meio, int fim)
         j++;
         k++;
     }
-    for(int p = inicio; p<= fim; p++){
+    for(int p = inicio; p<= fim; p++)
+    {
         vet[p] = aux[p];
     }
 }
@@ -89,7 +90,7 @@ void Sorts::insertionSort(int vet[], int tam)
     imprimeValores();
 }
 
-void Sorts::heapSort(int vet[], int tam, int raiz)
+void Sorts::constroiHeap(int vet[], int tam, int raiz)
 {
     int ram, valor; // ram = ramificação
     valor = vet[raiz];
@@ -111,9 +112,18 @@ void Sorts::heapSort(int vet[], int tam, int raiz)
     vet[raiz] = valor;
 }
 
-void Sorts::heapify() // FAZER!
+void Sorts::heapSort(int vet[], int tam) // FAZER!
 {
-
+    //int troca;
+    for(int i = tam/2; i>= 0; i--)
+    {
+        constroiHeap(vet,tam, i);
+    }
+    while(tam >0)
+    {
+        std::swap(vet[0],vet[tam-1]);
+        constroiHeap(vet,--tam,0);
+    }
 }
 
 int Sorts::quickSepara(int vet[], int inicio, int fim)

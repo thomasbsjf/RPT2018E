@@ -13,11 +13,13 @@ EndAberto::~EndAberto()
 
 }
 
-int EndAberto::getContadorColisao(){
+int EndAberto::getContadorColisao()
+{
     return contadorColisao;
 }
 
-void EndAberto::setContadorColisao(int n){
+void EndAberto::setContadorColisao(int n)
+{
     contadorColisao = n;
 }
 

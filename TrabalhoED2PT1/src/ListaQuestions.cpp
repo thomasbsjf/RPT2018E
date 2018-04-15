@@ -21,12 +21,13 @@ ListaQuestions::~ListaQuestions()
 
 Questions* ListaQuestions::insere(string id2, string user2,string data1,string score1,string title1)
 {
-    Questions *p= new Questions();
-    p->setid(id2);
+    Questions *p = new Questions();
+    p->setId(id2);
     p->setUser(user2);
-    p->setdata(data1);
-    p->setscore(score1);
-    p->settitle(title1);
+    p->setData(data1);
+    p->setScore(score1);
+    p->setTitle(title1);
+
     if(primeiro==NULL)
     {
         primeiro=p;
@@ -41,13 +42,13 @@ Questions* ListaQuestions::insere(string id2, string user2,string data1,string s
 
 bool ListaQuestions::busca(string s)
 {
-Questions *p;
-p=primeiro;
+    Questions *p;
+    p=primeiro;
     while (p!=NULL)
     {
-        if(s==p->getid())
+        if(s==p->getId())
         {
-            p->adiciona();
+            p->setQtd();
             return 1;
         }
 
@@ -61,12 +62,8 @@ void ListaQuestions::imprime()
     p=primeiro;
     while(p!=NULL)
     {
-        cout<<" Id          " <<p->getid()<< "               USER          " << p->getid()<<endl;
+        cout<<" Id          " <<p->getId()<< "               USER          " << p->getId()<<endl;
         p=p->getProx();
     }
 }
 
-Questions* ListaQuestions::retornaPrimeiro()
-{
-    return primeiro;
-}
