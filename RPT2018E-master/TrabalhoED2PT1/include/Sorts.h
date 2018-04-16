@@ -11,10 +11,8 @@ class Sorts
         /**Funcoes publicas QuickSort e InsertionSort**/
         void quickSort(int vet[], int, int);
         void quickSortMedianaTres(int vet[], int, int);
-        void quickSortMedianaCinco(int vet[], int inicio, int fim);
         void quickSortInsertion(int vet[], int, int);
         double medianaDeTres(int vet[], int inicio, int fim);
-        double medianaDeCinco(int vet[], int inicio, int fim);
         void insertionSort(int vet[], int n);
         void manualSortQuick(int vet[], int inicio, int fim);
         int numeroAleatorio(int menor, int maior);
@@ -24,6 +22,9 @@ class Sorts
 
         /**Funcoes publicas heapSort**/
         void mergeSort(int vet[], int inicio, int fim);
+
+        /**Funcoes publicas shellSort**/
+        void shellSort(int *vet, int tam);
 
         int getContadorCompara() {return contadorCompara;};
         void addContadorCompara() {contadorCompara += 1;}

@@ -21,7 +21,8 @@ public:
     int getTamanhoHash();
     void setTamanhoHash(int tam);
     int getContadorColisao();
-    void setContadorColisao(int n);
+    void setContadorColisao();
+    int getVetor(){return *v;}
 
 private:
     int tamHash;
