@@ -1,0 +1,87 @@
+package paratxt;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+/**
+ *
+ * @author PEDRO HENRIQUE EVELING OLIVEIRA
+ */
+public class TratamentodeArquivo { //CODIGO RESPONSAVEL PARA LEITURA E FILTRAGEM DAS INFORMAÇÕES UTEIS NO QUESTIONS.CSV E TRATAR PARA ERROS !
+
+    public static void main(String[] args) {
+File arq=new File("Questions2.txt");  // CRIA ARQUIVO PARA ESCREVER INFORMAÇÕES UTEIS.
+Scanner scanner; // CRIA SCANNER PARA LEITURA.
+try(FileWriter fw= new FileWriter (arq,true)){ 
+    
+    BufferedWriter a=new BufferedWriter (fw);   
+     
+     try{
+         String aspas;
+         aspas = "\\n\"\\n";
+               scanner = new Scanner(new FileReader("Questions.csv")).useDelimiter(aspas); // USA O QUESTIONS CSV- COM DELIMITADOR.
+                     a.write("------------ ORGANIZAÇÃO DE ARQUIVOS-------------\n ID USER DATA SCORE TITLE (NESSA ORDEM) ");
+                     int i=0; //CONTADOR QUE IMPRIME DURANTE PROCESSAMENTO DOS DADOS QUANTAS INTERAÇÕES FORAM REALIZADAS.
+                    String[] s2; //VETOR DE STRING QUE RECEBE BODY, E INFORMAÇÕES UTEIS.
+                    scanner.nextLine(); // PEGA PROXIMA LINHA PARA IGNORAR PRIMEIRA LINHA DO DOCUMENTO.
+              
+                    while(scanner.hasNext())//WHILE FORÇANDO O SCANNER A BUSCAR O PROXIMO ELEMENTO SE EXISTIR.
+               {   
+                  
+                        try{  //TRY PARA PREVINIR QUE ERROS NO QUESTIONS.CSV POSSAM INTERFERIR NO ANDAMENTO DO CODIGO.
+                            String []s=scanner.next().split(",\"<|,\"\\n|,\"\\D|,\"\\d");  //DELIMITA NOVAMENTE E DIVIDE EM 2 VETORES, UM CONTENDO BODY, OUTRO CONTENDO OUTRAS INFORMAÇÕES.
+                      
+                            s2 = s[0].split(",");                  //ATRIBUI A UM VETOR DE STRING
+                                     
+                            String g=null;   //STRING RESPONSAVEL POR MARCAR CADA INFORMAÇÃO PARA FACILITAR A LEITURA DO TXT, USANDO CODIGOS C++.                            
+                    
+                                    for(int n=0;n<s2.length;n++){  
+                       {
+                       {                 i++;a.newLine();
+                       
+                                            if(n==0)
+                                                g="*"; // ID
+                                            if (n==1)
+                                                g="-"; // USER
+                                            if (n==2)
+                                                g="@"; // DATA
+                                            if(n==3)
+                                                g="%"; //SCORE
+                                            if(n==4)
+                                                g="#";// TITLE
+                                              
+                                            a.write(g+s2[n]); //ESCREVE MARCADOR E INFORMAÇÃO.
+                       }                       
+                   }
+                                            System.out.println(i/5);    //  CONTADOR PARA SABER QUANTAS INFORMAÇÕES FORAM INSCRITAS.                          
+                                                    
+                   }}catch(Exception e)
+                 {
+                     System.out.println("error"); // MARCADOR PARA INFORMAR ERROS DURANTE O PROCESSAMENTO.
+                     
+                 }
+
+                     
+                                  
+               } scanner.close(); // FECHA O SCANNER.
+              
+
+        
+                
+}
+        catch (IOException ex)
+            {
+                ex.printStackTrace();
+            }
+     
+   
+}
+catch (IOException ex)
+    {
+        ex.printStackTrace();
+    }
+}
+}
