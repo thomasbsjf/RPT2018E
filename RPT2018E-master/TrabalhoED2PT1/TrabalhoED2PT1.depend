@@ -1,0 +1,144 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt1\main.cpp
+	<iostream>
+
+1523469398 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt1\src\sorts.cpp
+	"Sorts.h"
+	<algorithm>
+
+1523469392 c:\users\thoma\desktop\ed2018\trabalhoed2pt1\include\sorts.h
+	<algorithm>
+
+1523473619 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt1\teste.cpp
+
+1523473954 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt1\src\endaberto.cpp
+	"EndAberto.h"
+	<ostream>
+	<iostream>
+
+1523473527 c:\users\thoma\desktop\ed2018\trabalhoed2pt1\include\endaberto.h
+
+1523807057 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\src\endaberto.cpp
+	"EndAberto.h"
+	<ostream>
+	<iostream>
+
+1523807062 c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\include\endaberto.h
+
+1523636181 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\src\endcoalescido.cpp
+	"EndCoalescido.h"
+
+1523807066 c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\include\endcoalescido.h
+
+1523807050 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\src\endseparado.cpp
+	"EndSeparado.h"
+	<vector>
+	<iostream>
+
+1523807070 c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\include\endseparado.h
+	<vector>
+
+1523808945 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\src\sorts.cpp
+	"Sorts.h"
+	<algorithm>
+	<iostream>
+
+1523808423 c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\include\sorts.h
+	<algorithm>
+
+1523812871 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\main.cpp
+	<iostream>
+	<fstream>
+	<EndAberto.h>
+	<EndSeparado.h>
+	<Sorts.h>
+	<time.h>
+	<stdlib.h>
+	"ListaQuestions.h"
+	"Questions.h"
+
+1523812720 c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\include\listaquestions.h
+	<iostream>
+	"Questions.h"
+
+1523812711 c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\include\questions.h
+	<iostream>
+
+1523812855 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\src\listaquestions.cpp
+	"ListaQuestions.h"
+	<iostream>
+	"Questions.h"
+
+1523812770 source:c:\users\thoma\desktop\ed2018\trabalhoed2pt11504\src\questions.cpp
+	"Questions.h"
+
+1523814172 source:c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\src\endaberto.cpp
+	"EndAberto.h"
+	<ostream>
+	<iostream>
+
+1523814172 c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\include\endaberto.h
+
+1523814172 source:c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\src\endcoalescido.cpp
+	"EndCoalescido.h"
+
+1523814172 c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\include\endcoalescido.h
+
+1523814172 source:c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\src\endseparado.cpp
+	"EndSeparado.h"
+	<vector>
+	<iostream>
+
+1523814172 c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\include\endseparado.h
+	<vector>
+
+1523814172 source:c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\src\sorts.cpp
+	"Sorts.h"
+	<algorithm>
+	<iostream>
+	<time.h>
+
+1523814172 c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\include\sorts.h
+	<algorithm>
+
+1523837565 source:c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\src\menu.cpp
+	<iostream>
+	<fstream>
+	<EndAberto.h>
+	<EndSeparado.h>
+	<Sorts.h>
+	<time.h>
+	<stdlib.h>
+	"ListaQuestions.h"
+	"Questions.h"
+	"Menu.h"
+	<string>
+	<stdlib.h>
+	<sstream>
+	<cstdlib>
+	<ctime>
+
+1523839078 c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\include\menu.h
+
+1523834927 source:c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\main.cpp
+	<iostream>
+	<fstream>
+	<EndAberto.h>
+	<EndSeparado.h>
+	<Sorts.h>
+	<time.h>
+	<stdlib.h>
+	"ListaQuestions.h"
+	"Questions.h"
+	"Menu.h"
+
+1523814172 c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\include\listaquestions.h
+	<iostream>
+	"Questions.h"
+
+1523834897 c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\include\questions.h
+	<iostream>
+
+1523836040 source:c:\users\user\documents\rpt2018e-master\trabalhoed2pt1\src\questions.cpp
+	"Questions.h"
+
