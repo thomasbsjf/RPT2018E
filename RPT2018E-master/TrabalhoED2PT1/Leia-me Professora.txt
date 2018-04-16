@@ -1,0 +1,8 @@
+Olá professora.
+
+No Github temos a parte do programa que foi feita em Java(Leitura de arquivo TXT).
+
+Infelizmente o trabalho não vai estar com todas as funcionalidades 100%, porém até o dia 24 pretendemos ter ele funcionando, até porque temos o relatório.
+
+LINK PARA DOWNLOAD DO TXT QUESTIONS FEITO PELO JAVA.
+https://drive.google.com/file/d/17dcJIp7__t_tsQ0uv9Tc8ScUzADZeY_H/view?usp=sharing
